@@ -1,31 +1,21 @@
-#include <stdio.h>
-#include <string.h>
-
+#include<stdio.h>
+#include<string.h>
 
 int main()
 {
-   system("chcp 1251");
-   system("cls");
+	system("chcp 1251"); //Русский язык
+	system("cls");
 
-   char str[100];
-   int i, length, n;
-   printf("Введите строку: ");
-   gets(str);
-   
-   length = strlen(str) - 1;
+	char str1[100];	//Переманная с ординарными пробелами
+	char str2[200];	//Переманная с двойными пробелами
 
-   for (i = 0; i < length; i++)
-      if (str[i] == ' ')
-      {
-         n = length + 2;
-         while (str[i + 1] != ' ')
-         {
-            str[n] = str[n - 1];
-            n--;
-         }
-         length++;
-         i++;
-      }
-   printf("\nВывод:%s \n", str);
-   return 0;
+	printf("Введите строку: ");
+	gets(str1);
+
+
+	two_spaces(str2, str1);
+	
+	printf("\nРезультат: %s", str2);
+
+	return 0;
 }
